@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Beautiful Love💘💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  overflow:hidden;
+  text-align:center;
+  color:white;
+  background:linear-gradient(-45deg,#ff758c,#ff7eb3,#ff4d6d,#ff9a9e);
+  background-size:400% 400%;
+  animation:bgMove 10s ease infinite;
+}
+@keyframes bgMove{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+.heart{
+  position:absolute;
+  color:#fff;
+  animation:float 6s linear infinite;
+}
+@keyframes float{
+  0%{transform:translateY(100vh); opacity:1;}
+  100%{transform:translateY(-10vh); opacity:0;}
+}
+
+.page{display:none; padding:40px;}
+button{
+  padding:12px 28px;
+  border:none;
+  border-radius:30px;
+  background:white;
+  color:#ff4d6d;
+  font-weight:bold;
+  font-size:16px;
+  cursor:pointer;
+  margin:10px;
+  transition:0.3s;
+}
+button:hover{
+  transform:scale(1.1);
+  background:#ff4d6d;
+  color:white;
+}
+
+input{
+  padding:10px;
+  border-radius:20px;
+  border:none;
+  text-align:center;
+  margin-top:10px;
+}
+
+.cartoon{
+  width:150px;
+  height:150px;
+  background:#fff;
+  border-radius:50%;
+  margin:20px auto;
+  position:relative;
+  animation:bounce 2s infinite;
+}
+@keyframes bounce{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-15px);}
+}
+.eye{
+  width:20px;
+  height:20px;
+  background:black;
+  border-radius:50%;
+  position:absolute;
+  top:50px;
+}
+.eye.left{left:40px;}
+.eye.right{right:40px;}
+.smile{
+  width:60px;
+  height:30px;
+  border:5px solid black;
+  border-top:none;
+  border-radius:0 0 50px 50px;
+  position:absolute;
+  bottom:40px;
+  left:45px;
+}
+
+img{
+  width:260px;
+  border-radius:20px;
+}
+
+.loveEmoji{
+  font-size:45px;
+  animation:pulse 1s infinite alternate;
+}
+@keyframes pulse{
+  from{transform:scale(1);}
+  to{transform:scale(1.3);}
+}
+</style>
+</head>
+<body>
+
+<script>
+for(let i=0;i<30;i++){
+  let h=document.createElement("div");
+  h.innerHTML="❤";
+  h.className="heart";
+  h.style.left=Math.random()*100+"vw";
+  h.style.fontSize=(15+Math.random()*25)+"px";
+  h.style.animationDuration=(3+Math.random()*4)+"s";
+  document.body.appendChild(h);
+}
+</script>
+
+<div class="page" id="home" style="display:block;">
+  <h1>Adigina questions ki answers ivvandi 😁💖</h1>
+
+  <div class="cartoon">
+      <div class="eye left"></div>
+      <div class="eye right"></div>
+      <div class="smile"></div>
+  </div>
+
+  <button onclick="show('password')">Let’s Start</button>
+</div>
+
+<div class="page" id="password">
+  <h2>Password enter cheyandi...👀🤌🏻</h2>
+  <input type="password" id="pass">
+  <br>
+  <button onclick="checkPass()">Submit</button>
+  <button onclick="alert('Hint:Na Puttina roju..❤️')">Hint</button>
+</div>
+
+<div class="page" id="q1">
+  <h2>Question 1 💕</h2>
+  <p>Manam iddaramey first kalisi vellina place enti...💓?</p>
+  <input type="text" id="a1">
+  <br>
+  <button onclick="next1()">Next</button>
+</div>
+
+<div class="page" id="q2">
+  <h2>Question 2 💕</h2>
+  <p>Naku meelo istamainadhi enti...👀?</p>
+  <input type="text" id="a2">
+  <br>
+  <button onclick="next2()">Next</button>
+</div>
+
+<div class="page" id="q3">
+  <h2>Question 3 💕</h2>
+  <p>Nenu mimalni mudduga emani pilustha...🙈?</p>
+  <input type="text" id="a3">
+  <br>
+  <button onclick="next3()">Next</button>
+</div>
+
+<div class="page" id="q4">
+  <h2>Question 4 💕</h2>
+  <p>Naa favourite food enti...😅?</p>
+  <input type="text" id="a4">
+  <br>
+  <button onclick="next4()">Next</button>
+</div>
+
+<div class="page" id="q5">
+  <h2>Question 5 💕</h2>
+  <p>Nenu mee intiki first time eh roju vachanu..🧐😁?</p>
+  <input type="text" id="a5">
+  <br>
+  <button onclick="next5()">Next</button>
+</div>
+
+<!-- QUIZ COMPLETE -->
+<div class="page" id="success">
+  <h1>🎉 Successful ga quiz complete chesaru....😘🎉</h1>
+  <button onclick="show('m1')">💞Mana memories ni okkasari malli gurthuchesukundham💞</button>
+</div>
+
+<div class="page" id="m1">
+  <img src="photos/photo1.jpg">
+  <p>Manam first time cmr central ki vellinappudu theeskunna first photo💘</p>
+  <button onclick="show('m2')">Next</button>
+</div>
+
+<div class="page" id="m2">
+  <img src="photos/photo2.jpg">
+  <p>Manam bheemili beach lo teeskunna first photo..💕</p>
+  <button onclick="show('m3')">Next</button>
+</div>
+
+<div class="page" id="m3">
+  <img src="photos/photo3.jpg">
+  <p>Manam central park lo teeskunna first photo..💓</p>
+  <button onclick="show('m4')">Next</button>
+</div>
+
+<div class="page" id="m4">
+  <img src="photos/photo4.jpg">
+  <p>Meeru nakosam first time pettina snap..💗</p>
+  <button onclick="show('m5')">Next</button>
+</div>
+
+<div class="page" id="m5">
+  <img src="photos/photo5.jpg">
+  <p>Mana iddariki first time bus lo sudheer teesina photo..❣️</p>
+  <button onclick="show('m6')">Next</button>
+</div>
+
+<div class="page" id="m6">
+  <img src="photos/photo6.jpg">
+  <p>Naa 2024 birthday ki teeskunna photo...💝</p>
+  <button onclick="show('m7')">Next</button>
+</div>
+
+<div class="page" id="m7">
+  <img src="photos/photo7.jpg">
+  <p>Naa 2-1 exams start avvakamundhu mounika sumanth tho bheemili vellinappudu teeskunna photo...💌</p>
+  <button onclick="show('m8')">Next</button>
+</div>
+
+<div class="page" id="m8">
+  <img src="photos/photo8.jpg">
+  <p>December 31 2024 vinay annaya revanth annayatho kalisi manam central ki vellinappudu teeskunna photo...💖</p>
+  <button onclick="show('m9')">Next</button>
+</div>
+
+<div class="page" id="m9">
+  <img src="photos/photo9.jpg">
+  <p>Mee intiki first time vachinappudu meeru nannu nanna bike meedha drop chesthunappudu kbr bus stop lo teeskunna photo...💘</p>
+  <button onclick="show('m10')">Next</button>
+</div>
+
+<div class="page" id="m10">
+  <img src="photos/photo10.jpg">
+  <p>Mee october 4 2025 lo manam ajay annaya vallatho kalisi cheskuna me birthday appudu theeskunna photo...💞</p>
+  <button onclick="show('m11')">Next</button>
+</div>
+
+<div class="page" id="m11">
+  <img src="photos/photo11.jpg">
+  <p>Meeru nenu sumanth mounika tho simahachalam velthunappudu bus lo teeskunna photo..💗</p>
+  <button onclick="show('m12')">Next</button>
+</div>
+
+<div class="page" id="m12">
+  <img src="photos/photo12.jpg">
+  <p>Meeku job vachina taravatha manam mana friends tho celebrate cheskunappudu teeskunna photo...💝</p>
+  <button onclick="show('m13')">Next</button>
+</div>
+
+<div class="page" id="m13">
+  <img src="photos/photo13.jpg">
+  <p>Meeku job vachinappudu meeru first time nannu vodhilesi hyderabad vellina roju train lo teeskunna photo...🥺💘</p>
+  <button onclick="show('m14')">Next</button>
+</div>
+
+<div class="page" id="m14">
+  <img src="photos/photo14.jpg">
+  <p>Meeru vizag vachinappudu valentines roju  central lo teeskunna photo...💝🫀🌎♾️</p>
+  <button onclick="show('letterBtn')">Next</button>
+</div>
+
+<div class="page" id="letterBtn">
+  <h2>Mee kosam na manasuloni matalni ee letter roopam lo rasanu choodandi...👀💌</h2>
+  <div class="loveEmoji">💌💖💌</div>
+  <button onclick="show('final')">Letter open cheyandi🙈❤️‍🩹</button>
+</div>
+
+<div class="page" id="final">
+  <h1 class="loveEmoji">💖 Evandoi Sreevaru 👀</h1>
+  <p>
+        Evandoi ...💋💝👩🏻‍❤️‍💋‍👨🏼😘❤️<br><br>
+            Mimmalni bus lo choosinappudu meetho matladinappudu nenu anukoledhu meeru na life intha important person avtharani.May be na badhalu na kastalu na ontarithananni choosi devudey
+            na meedha jaali padi mimmalni na deggaraki pampinchi untaru.Nenu ela antey na life lo nannu preminchey person okkaru leru nannu kavalanukunna person kuda okkaru leru
+            adhulo na thappemi ledhu but vallaki chala innocent ga appudu nakem thelisedhi kadhu naku kavalsina prema naku ma parents nunchi raledhu so ma frnds evaraina konchem prema
+            choopinchina vallu em adigithey adhi chesesedhanini vallaki em kavalo adhi ichesedhanini adhey vallaki alusuga marindhi anthey lendi nammithey ney ga evaraina mosam chesedhi.Ela
+            undendhantey andhariki na best ichina sarey enni efforts pettina vallu valla needs kosam valla avasarala kosam matramey natho undevaru.
+            Paina cheppindhantha just na life lo persons lerani meeku theliyadaniki.Ippudu me deggaraki vasthey meeru frist bus lo natho matladadaniki try chesina situation thaluchukuntey ippuduki
+            naku navvu agadhu😅🥰,but ah roju nenu meetho matladadam na life lo nenu chesina best thing💓.Nenu neelo em choosi premincharo naku thelidhu and mimalni preminchadaniki na deggara 
+            reason kuda ledhu may be idhenemo prema antey💝.Mimmalni ela nammi meeru kavalani inni chesano thelidhu even third person mana life loki vachina sarey strong ga nilabadi meeru naku kavalani
+            mimalni sadhinchukunna❣️.Aa devudiki kuda telsu meeru lekunda nenu ee bhoomi meedha undi waste ani.Devudu gurinchi cheppalantey chinappudu nunchi eh devuduni nammani mokkani naku nijamaina
+            devudu antey ila untadu ani parichayam chesindhi meeru dhaniki meeku thank you✝️💖☺️.May be ah devudu me dwara nannu piluchukunnaru emo.
+            Meerantey naku nijam ga na pranam kanna ekkuva,meeru nalo em choosaro naku thelidhu kani nannu nammi nenu kavali anukoni nakosam undi nakosam maari nannu preminchi na aakali teerchi,
+            na kannellu thudichi,na cheyi pattukoni naku thodundi,nenu ontaridhanini kadhu na kosam meeru unnaranna dairyam nakichi na kastam lo sukam lo badha lo anandam lo meerundi avanni meerey 
+            ayyi evaru mana madhya raleru anna dairyam nakichi nathoney unnaru💯🥺💘🌎💌.
+            Naku oka family ni nakoka respect ni nakoka identity ni nannu preminchevarini naku respect icehvarini nenu emaina cheyagalanani nannu nammi nannu encourage chesi nenu edhaina sandhinchagalanu
+            anna nammakan ichi nenu kuda special eh ani nenu feel ayyela chesi eavrikosam efforts pettani meeru nakosam petti nannu inthala premisthunandhuku chala chala chaala thanks🙏🏻🥺💓.
+            Ivanni chesina meeku nenu okkatey cheppagalnu mimmalni life long happy ga chooskunta me kastam lo sukam lo badhalo santhosahm lo meeku thodunta edhi emaina evaru addu vachina em chesina 
+            mee cheyi matram vodhalanu meekosam pillalni kanta job chestha financial ga stable avtha mana family kosam kastapadatha meeru nenu mana pillalu amma nanna andharam happy ga untam.
+            Mee amma nanna ni chala baaga chooskunta mee inti peru nilabettey kodalni avtha meeru na meedha pettukunna nammakanni eppatiki ponivvani💯💌.
+            Naa life loki vachinandhuku chala chala chala thanks....🥺💞
+            Inka na pani emaina undhi antey life mothamme seva cheskuntu devudi seva cheskuntu anni manchiga chooskuntu illuni pillalni sakramanga unchuthu mimalni happy ga eh lotu lekunda chooskodamey..🥰💖
+            LOVE YOU SO MUCH💝🫀🌎♾️🫂
+            Trust me,and i will prove myself....💯🤌🏻💗
+            PREMATHO MEE PELLAM.....🙈👀☺️
+  </p>
+</div>
+
+<script>
+function show(id){
+  let pages=document.querySelectorAll(".page");
+  pages.forEach(p=>p.style.display="none");
+  document.getElementById(id).style.display="block";
+}
+
+function checkPass(){
+  if(document.getElementById("pass").value=="16-11-2006"){
+    show('q1');
+  }else{
+    alert("Marchipoyara..☹️🥺!");
+  }
+}
+
+function next1(){
+  if(document.getElementById("a1").value.toLowerCase()=="bheemili beach"){
+    show('q2');
+  }else{
+    alert("Gurthuledha..☹️🥺!");
+  }
+}
+
+function next2(){
+  if(document.getElementById("a2").value.toLowerCase()=="smile"){
+    show('q3');
+  }else{
+    alert("Gurthuledha..☹️🥺!");
+  }
+}
+
+function next3(){
+  if(document.getElementById("a3").value.toLowerCase()=="sreevaru"){
+    show('q4');
+  }else{
+    alert("Gurthuledha..☹️🥺!");
+  }
+}
+
+function next4(){
+  if(document.getElementById("a4").value.toLowerCase()=="chicken"){
+    show('q5');
+  }else{
+    alert("Gurthuledha..☹️🥺!");
+  }
+}
+
+function next5(){
+  if(document.getElementById("a5").value.toLowerCase()=="june 1 2025"){
+    show('success');
+  }else{
+    alert("Gurthuledha..☹️🥺!");
+  }
+}
+</script>
+
+</body>
+</html>
